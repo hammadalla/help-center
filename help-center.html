@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Help Center</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- الاستايل الافتراضي (إنجليزي) -->
+    <link rel="stylesheet" href="help-center.css" id="mainStyle">
+</head>
+
+<body>
+    <div class="container-fluid my-4">
+        <header class="text-center mb-4">
+            <h1 id="pageTitle" class="mb-2">Help Center</h1>
+            <p id="pageSubtitle" class="text-muted">Find answers or browse categories</p>
+
+            <!-- زر الصفحة الرئيسية -->
+            <a id="homeBtn" href="https://packlco.vercel.app/" class="btn btn-outline-success btn-sm mt-2 mr-2">Home</a>
+
+            <!-- زر تغيير اللغة -->
+            <button id="langToggle" class="btn btn-outline-primary btn-sm mt-2">عربي</button>
+        </header>
+        <div class="input-group mb-4">
+            <input type="text" id="search" class="form-control" placeholder="Search articles...">
+            <div class="input-group-append">
+                <button title="search" class="btn btn-search" id="searchBtn"><i class="fa fa-search"></i></button>
+            </div>
+            <!-- زر فتح القائمة في الموبايل -->
+            <button class="btn btn-primary d-md-none" id="toggleSidebar">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="row">
+            <aside class="col-md-4 sidebar" id="sidebar">
+                <!-- زر اغلاق -->
+                <button id="closeSidebar" class="btn btn-sm btn-danger d-md-none mb-3">
+                    <i class="fa fa-times"></i> Close
+                </button>
+                <div class="list-group" id="categories"></div>
+            </aside>
+
+            <main class="col-md-8">
+                <section id="listView">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h5 id="articlesTitle">Articles</h5>
+                        <span class="text-muted">
+                            <span id="resultsLabel">Results:</span>
+                            <span id="count">0</span>
+                        </span>
+                    </div>
+                    <div class="row" id="results"></div>
+                </section>
+
+                <section id="articleView" style="display:none;">
+                    <div class="breadcrumbs" id="crumbs"></div>
+                    <h4 id="articleTitle"></h4>
+                    <p id="articleIntro"></p>
+                    <ol id="articleSteps"></ol>
+
+                    <a id="extraLink" href="https://example.com/reset-password" target="_blank"
+                        style="display:none;"></a>
+
+                    <div class="rating-box">
+                        <p id="ratingQuestion">Was this information helpful?</p>
+                        <button id="btnYes" class="yes">Yes</button>
+                        <button id="btnNo" class="no">No</button>
+                    </div>
+
+                    <div class="mt-3 text-right">
+                        <button class="btn btn-back" id="backBtn">Back</button>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="help-center.js"></script>
+</body>
+
+</html>
